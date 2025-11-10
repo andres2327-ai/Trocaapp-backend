@@ -1,0 +1,14 @@
+### Crear nuevo usuario
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "id_rol": 1,
+    "nombre": "Juan Pérez",
+    "correo": "juan.perez@example.com",
+    "contrasena": "Password123!",
+    "fecha_nacimiento": "1990-01-15"
+}
+
+### Eliminar usuario
+DELETE http://localhost:3000/api/users/1
