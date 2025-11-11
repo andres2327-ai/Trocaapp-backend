@@ -3,12 +3,26 @@ POST http://localhost:3000/api/users
 Content-Type: application/json
 
 {
-    "id_rol": 1,
-    "nombre": "Juan Pérez",
-    "correo": "juan.perez@example.com",
-    "contrasena": "Password123!",
-    "fecha_nacimiento": "1990-01-15"
+        "id_rol": 2,
+        "nombre": "Juan Pérez",
+        "correo": "juan.perez@example.com",
+        "contrasena": "Password123!",
+        "fecha_nacimiento": "1990-01-15"
 }
 
-### Eliminar usuario
-DELETE http://localhost:3000/api/users/1
+### Crear producto para usuario id 2
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "id_usuario": 2,
+    "titulo": "Camisa de ejemplo",
+    "descripcion": "Camisa en buen estado, talla M",
+    "preferencia": "Intercambio"
+}
+
+### Obtener todos los productos
+GET http://localhost:3000/api/products
+
+### Eliminar producto (reemplaza 1 por el id real)
+DELETE http://localhost:3000/api/products/1

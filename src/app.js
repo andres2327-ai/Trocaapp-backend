@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.routes.js";
+import productRoutes from "./routes/products.routes.js";
 import { getConnection } from "./config/db.js";
 
 dotenv.config();
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor de Trueques funcionando ✅");
@@ -29,6 +31,8 @@ app.get("/test-db", async (req, res) => {
     res.status(500).json({ error: "Error al conectar a la base de datos" });
   }
 });
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
