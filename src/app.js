@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.routes.js";
 import productRoutes from "./routes/products.routes.js";
+import messagesRoutes from "./routes/messages.routes.js";
 import { getConnection } from "./config/db.js";
 
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/messages", messagesRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor de Trueques funcionando ✅");

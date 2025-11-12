@@ -26,3 +26,39 @@ GET http://localhost:3000/api/products
 
 ### Eliminar producto (reemplaza 1 por el id real)
 DELETE http://localhost:3000/api/products/1
+
+### Crear nuevo usuario (id 3 esperado)
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+        "id_rol": 2,
+        "nombre": "María López",
+        "correo": "maria.lopez@example.com",
+        "contrasena": "Secret123$",
+        "fecha_nacimiento": "1992-06-20"
+}
+
+### Enviar mensaje de usuario 2 -> usuario 3
+POST http://localhost:3000/api/messages
+Content-Type: application/json
+
+{
+    "id_usuario_remitente": 2,
+    "id_usuario_receptor": 3,
+    "mensaje": "Hola María, ¿te interesa intercambiar por una camisa?"
+}
+
+### Enviar respuesta de usuario 3 -> usuario 2
+POST http://localhost:3000/api/messages
+Content-Type: application/json
+
+{
+    "id_usuario_remitente": 3,
+    "id_usuario_receptor": 2,
+    "mensaje": "Hola Juan, sí me interesa. ¿Puedes enviarme fotos?"
+}
+
+### Obtener todos los mensajes
+GET http://localhost:3000/api/messages
+
